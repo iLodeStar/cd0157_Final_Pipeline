@@ -25,8 +25,9 @@ phases:
       - export PATH=$PWD/:$PATH  
       - python --version
       - echo 'export PATH=$PWD/:$PATH' >> $HOME/.bashrc
-      - echo `kubectl version --short --client`
-      - python -m pip3 install --upgrade --force pip3
+      - echo `kubectl version --client`
+      - pip -v
+      - python -m pip install --upgrade --force pip
       - apt-get update && apt-get -y install jq  && pip3 install --upgrade awscli
   pre_build:
       commands:
